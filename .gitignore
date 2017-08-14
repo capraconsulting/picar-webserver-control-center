@@ -1,2 +1,7 @@
-__pycache__/
+
+# Ignore virtualenv
+venv/
+
+# Cached Python "bytecode" files etc.
 *.pyc
+__pycache__/

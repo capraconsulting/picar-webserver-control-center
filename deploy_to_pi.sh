@@ -1,3 +1,10 @@
 #!/usr/bin/env sh
 
-scp -i raspberry_picar_rsa server.py requirements.txt pi@raspberrypi.local:/home/pi/picar_webserver
+# Clean .pyc files
+
+echo "Deleting *.pyc files"
+find . -name *.pyc -delete
+
+# Application files
+echo "Copying applicaton files to Raspberry pi at raspberrypi.local"
+scp -i raspberry_picar_rsa -r server.py deployment/ controls/ requirements.txt pi@raspberrypi.local:/home/pi/picar_webserver

@@ -19,7 +19,7 @@ sockets = Sockets(app)
 logger = logging.getLogger(__name__)
 
 # TODO: Replace this with a hash string or something
-WEBSOCKET_SECURITY_TOKEN = "secret"
+WEBSOCKET_SECURITY_TOKEN = "verysecrettoken"
 
 DEBUG = True
 
@@ -27,6 +27,11 @@ DEBUG = True
 @app.route("/")
 def index():
     return "Here be the root of all"
+
+
+@app.route("/blue")
+def another():
+    return "Here be the BLUE root of all"
 
 
 @sockets.route("/picar_action")
